@@ -14,5 +14,9 @@
    5- Add new classroom in the one class OR update OR delete it.
 - You can make update of the username and password of the account you open.
 
-### Technologies
-> HTML, CSS, Javascrip, C#
+### Tech Used
+> C#, SQL Server, HTML, CSS, Bootstrap, JQuery and Native Javascript.
+
+### Developers
+- [Khaled Elshokiy](https://github.com/KhaledAbd) Back-end developer of the project.
+- [Khaled Mohamed](https://github.com/krypton225) Front-end developer of the project.
