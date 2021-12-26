@@ -1,0 +1,40 @@
+﻿@model User
+@{
+    ViewData["Title"] = "تسجيلُ الدُخول";
+}
+
+<nav>
+    <a class="logo" href="#">
+        <img src="~/images/letterM.png">
+    </a>
+</nav>
+
+<!--=====================================================================================================================================-->
+<!--Box of the login-->
+<div class="box-login">
+
+    <div class="top-div">
+        <img src="~/images/avatar.png ">
+    </div>
+
+    <form asp-action="Login" method="POST">
+
+        <input asp-for="@Model.UserName" type="text" placeholder="Username" id="myUsername" title="ادخِلْ اسمَ المُستخدم" required /><br>
+
+        <input asp-for="@Model.Password" type="password" placeholder="Password" id="myPassword" title="ادخِلْ كلمةَ المُرور" required /><br>
+
+        <button type="submit" title="الدُخول الآن">login</button>
+
+    </form>
+
+    <p>&copy; School App</p>
+
+</div>
+
+<!-- This is all CSS files for this page -->
+<link rel="stylesheet" href="~/css/sumOfAllFiles.css" />
+<link rel="stylesheet" href="~/css/styleIndex.css" />
+
+<!-- This is all JAVASCRIPT files for this page -->
+<script src="~/js/custom-index.js"></script>
+

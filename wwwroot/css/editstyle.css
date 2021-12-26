@@ -1,0 +1,486 @@
+@keyframes expand-my-navbar {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 60px;
+    }
+}
+
+::-webkit-input-placeholder {
+    /* Edge */
+    font-size: 16px;
+}
+
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-size: 16px;
+}
+
+::placeholder {
+    font-size: 16px;
+}
+
+
+/*=============================================== Start Navbar ===============================================*/
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(36, 36, 36, 0.9);
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+    nav .logo img {
+        height: 29px;
+        width: 29px;
+        margin: 22px auto;
+        display: block;
+        text-align: center;
+    }
+
+.fas {
+    font-size: 27px;
+    color: rgb(179, 179, 179);
+}
+
+    .fas:hover {
+        color: rgb(240, 240, 240);
+    }
+
+.fa-sign-out-alt,
+.fa-user-cog {
+    position: fixed;
+    top: 3%;
+    font-size: 20px;
+    color: rgb(65, 95, 160);
+    cursor: pointer;
+}
+
+.fa-sign-out-alt {
+    left: 2%;
+}
+
+.fa-user-cog {
+    left: 7%;
+    background-color: transparent;
+    border: none;
+}
+
+    .fa-sign-out-alt:hover,
+    .fa-user-cog:hover {
+        color: rgb(116, 133, 170);
+    }
+
+.fa-chalkboard-teacher:hover {
+    cursor: pointer;
+}
+
+.fa-home,
+.fa-university {
+    font-size: 25px;
+}
+
+.navbar {
+    width: 100%;
+    top: 0px;
+    position: fixed;
+    background-color: rgba(36, 36, 36, 1);
+    justify-content: center;
+    text-align: center;
+    animation: expand-my-navbar 0.3s;
+}
+
+    .navbar .navbar-nav .nav-item {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+
+/*=============================================== End Navbar ===============================================*/
+
+.table-responsive {
+    position: relative;
+    width: 70%;
+    height: auto;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgba(36, 36, 36, 1);
+    font-family: 'Cairo', sans-serif;
+    letter-spacing: 1px;
+    animation: moveToRight 3s;
+}
+
+    .table-responsive th {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+
+    .table-responsive td,
+    th {
+        text-align: center;
+    }
+
+.table-striped {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.table th,
+.table td {
+    color: #FFF;
+    font-size: 13px;
+}
+
+.modal-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-control {
+    float: right;
+    text-align: end;
+}
+
+.col-form-label {
+    float: right;
+    font-weight: bold;
+}
+
+.differentTable,
+.differentTable td {
+    border-color: black;
+}
+
+
+/* ===========================
+   ====== Search Box ====== 
+   =========================== */
+
+.search-listClass {
+    width: 74%;
+    border: 2px solid rgb(52, 58, 64);
+    overflow: auto;
+    margin-top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    animation: moveToRight 3s;
+}
+
+    .search-listClass input[type="text"] {
+        border: 0px;
+        width: 90%;
+        padding: 10px 10px;
+        float: right;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: bolder;
+        background-color: rgb(52, 58, 64);
+    }
+
+        .search-listClass input[type="text"]:focus {
+            outline: 0;
+            font-weight: bolder;
+            color: #545ead;
+        }
+
+    .search-listClass input[type="submit"] {
+        width: 10%;
+        border: none;
+        background-color: rgb(65, 95, 160);
+        color: #fff;
+        float: right;
+        padding: 10px;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+        .search-listClass input[type="submit"]:hover {
+            transition: 1s;
+            background-color: rgb(66, 101, 175);
+        }
+
+@media (min-width: 500px) and (max-width: 575px) {
+    ::-webkit-input-placeholder {
+        /* Edge */
+        font-size: 13px;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-size: 13px;
+    }
+
+    ::placeholder {
+        font-size: 13px;
+    }
+
+    .navbar {
+        top: 0%;
+        width: 100%;
+    }
+
+    .fa-sign-out-alt,
+    .fa-user-cog {
+        font-size: 15px;
+        left: 4%;
+    }
+
+    .fa-sign-out-alt {
+        margin-right: 5px;
+    }
+
+    .fa-user-cog {
+        margin-left: 35px;
+    }
+
+    .fa-home,
+    .fa-university,
+    .fa-chalkboard-teacher {
+        font-size: 18px;
+    }
+
+    h4 {
+        margin-top: 20%;
+        color: rgb(29, 23, 23);
+        font-size: 20px;
+    }
+
+    .table-responsive {
+        width: 100%;
+        height: auto;
+        top: 55px;
+    }
+
+        .table-responsive th {
+            font-size: 10px;
+        }
+
+        .table-responsive td {
+            font-size: 10px;
+        }
+
+    .search-listClass {
+        width: 76%;
+        margin-top: 25%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 576px) {
+    ::-webkit-input-placeholder {
+        /* Edge */
+        font-size: 13.5px;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-size: 13.5px;
+    }
+
+    ::placeholder {
+        font-size: 13.5px;
+    }
+
+    .navbar {
+        top: 0%;
+        width: 100%;
+    }
+
+    .fa-sign-out-alt,
+    .fa-user-cog {
+        font-size: 17px;
+        left: 4%;
+    }
+
+    .fa-sign-out-alt {
+        margin-right: 5px;
+    }
+
+    .fa-user-cog {
+        margin-left: 35px;
+    }
+
+    .fa-home,
+    .fa-university,
+    .fa-chalkboard-teacher {
+        font-size: 22px;
+    }
+
+    h4 {
+        margin-top: 19%;
+        color: rgb(29, 23, 23);
+        font-size: 21px;
+    }
+
+    .table-responsive th {
+        font-size: 15px;
+    }
+
+    .table-responsive td {
+        font-size: 12px;
+    }
+
+    .table-responsive {
+        width: 100%;
+        height: auto;
+        top: 50px;
+    }
+
+    .search-listClass {
+        width: 76%;
+        margin-top: 15%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    ::-webkit-input-placeholder {
+        /* Edge */
+        font-size: 14px;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-size: 14px;
+    }
+
+    ::placeholder {
+        font-size: 14px;
+    }
+
+    .navbar {
+        top: 0%;
+        width: 100%;
+    }
+
+    .fa-sign-out-alt,
+    .fa-user-cog {
+        font-size: 17px;
+        left: 2.2%;
+    }
+
+    .fa-home,
+    .fa-university,
+    .fa-chalkboard-teacher {
+        font-size: 22px;
+    }
+
+    h4 {
+        margin-top: 15%;
+        color: rgb(29, 23, 23);
+        font-size: 22px;
+    }
+
+    .table-responsive th {
+        font-size: 14px;
+    }
+
+    .table-responsive td {
+        font-size: 12px;
+    }
+
+    .table-responsive {
+        width: 100%;
+        height: auto;
+        top: 50px;
+    }
+
+    .search-listClass {
+        width: 80%;
+        margin-top: 15%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 992px) {
+    ::-webkit-input-placeholder {
+        /* Edge */
+        font-size: 15px;
+    }
+
+    :-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        font-size: 15px;
+    }
+
+    ::placeholder {
+        font-size: 15px;
+    }
+
+    .navbar {
+        top: 0%;
+        width: 100%;
+    }
+
+    .fa-sign-out-alt,
+    .fa-user-cog {
+        font-size: 19px;
+        left: 2%;
+    }
+
+    .fa-sign-out-alt {
+        margin-right: 5px;
+    }
+
+    .fa-user-cog {
+        margin-left: 35px;
+    }
+
+    .fa-home,
+    .fa-university,
+    .fa-chalkboard-teacher {
+        font-size: 25px;
+    }
+
+    h4 {
+        margin-top: 12%;
+        color: rgb(29, 23, 23);
+        font-size: 22px;
+    }
+
+    .table-responsive th {
+        font-size: 18px;
+    }
+
+    .table-responsive td {
+        font-size: 15px;
+    }
+
+    .table-responsive {
+        width: 90%;
+        height: auto;
+        top: 50px;
+    }
+
+    .search-listClass {
+        width: 74%;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    h4 {
+        margin-top: 10%;
+    }
+
+    .navbar {
+        width: 60%;
+    }
+}

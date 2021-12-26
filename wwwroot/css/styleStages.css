@@ -1,0 +1,200 @@
+/*=============================================== Start Navbar ===============================================*/
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(36, 36, 36, 0.9);
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+nav .logo img {
+    height: 29px;
+    width: 29px;
+    margin: 22px auto;
+    display: block;
+    text-align: center;
+}
+
+.fas {
+    font-size: 27px;
+    color: rgb(179, 179, 179);
+}
+
+.fas:hover {
+    color: rgb(240, 240, 240);
+}
+
+.fa-sign-out-alt,
+.fa-user-cog {
+    position: fixed;
+    top: 3%;
+    font-size: 20px;
+    color: rgb(65, 95, 160);
+    cursor: pointer;
+}
+
+.fa-sign-out-alt {
+    left: 2%;
+}
+
+.fa-user-cog {
+    left: 7%;
+    background-color: transparent;
+    border: none;
+}
+
+.fa-sign-out-alt:hover,
+.fa-user-cog:hover {
+    color: rgb(116, 133, 170);
+}
+
+
+/*=============================================== End Navbar ===============================================*/
+
+.row1 {
+    width: 400px;
+    height: 260px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 15% auto;
+    padding: 35px;
+    background-color: rgba(14, 12, 12, 0.77);
+    animation: moveToLeft 2s;
+}
+
+.row1 a {
+    width: 99%;
+    height: 50px;
+    color: black;
+    display: block;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(65, 95, 160);
+    border-radius: 10px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-size: 22px;
+    font-family: 'Lalezar', cursive;
+}
+
+.row1 a:hover {
+    transition: 2s;
+    background-color: rgb(86, 129, 221);
+}
+
+#modalLabelOfNewPassword {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#newPassword {
+    text-align: end;
+}
+
+@media (min-width: 500px) and (max-width: 575px) {
+    nav .logo img {
+        height: 20px;
+        width: 20px;
+    }
+    .fa-sign-out-alt,
+    .fa-user-cog {
+        font-size: 15px;
+        left: 4%;
+    }
+    .fa-sign-out-alt {
+        margin-right: 5px;
+    }
+    .fa-user-cog {
+        margin-left: 35px;
+    }
+    .row1 {
+        margin: 35% auto;
+        padding: 35px;
+    }
+    .row1 a {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 576px) {
+    nav .logo img {
+        height: 22px;
+        width: 22px;
+    }
+    .fa-sign-out-alt,
+    .fa-user-cog {
+        font-size: 17px;
+        left: 4%;
+    }
+    .fa-sign-out-alt {
+        margin-right: 5px;
+    }
+    .fa-user-cog {
+        margin-left: 35px;
+    }
+    .row1 {
+        margin: 30% auto;
+        padding: 35px;
+    }
+    .row1 a {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    nav .logo img {
+        height: 26px;
+        width: 26px;
+    }
+    .fa-sign-out-alt,
+    .fa-user-cog {
+        font-size: 17px;
+    }
+    .row1 {
+        width: 400px;
+        height: 240px;
+        margin: 23% auto;
+        padding: 35px;
+    }
+    .row1 a {
+        width: 99%;
+        height: 40px;
+        padding: 8px;
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 992px) {
+    nav .logo img {
+        height: 29px;
+        width: 29px;
+    }
+    .fa-sign-out-alt,
+    .fa-user-cog {
+        font-size: 17px;
+        left: 2%;
+    }
+    .fa-sign-out-alt {
+        margin-right: 5px;
+    }
+    .fa-user-cog {
+        margin-left: 35px;
+    }
+    .row1 {
+        width: 400px;
+        height: 260px;
+        margin: 18% auto;
+        padding: 35px;
+    }
+    .row1 a {
+        width: 99%;
+        height: 50px;
+        padding: 10px;
+        font-size: 19px;
+    }
+}
+
+@media (min-width: 1200px) {}

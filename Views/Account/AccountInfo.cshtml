@@ -1,0 +1,120 @@
+﻿@model string
+@{
+    ViewData["Title"] = "تعديلاتٌ في الحسابِ";
+}
+
+<!--This is for displaying the two icons in the nav bar-->
+<style>
+
+    #outing {
+        display: none;
+    }
+
+    #changeData {
+        display: none;
+    }
+</style>
+
+<!--=================================================================================================================================-->
+<!--This is the DIV for the container of the two links
+    -> The first : تعديل اسم المُستخدم .
+    -> The second : تعديل كلمة المرور .
+-->
+<div class="container ">
+    <h2></h2>
+    <button type="button" class="btn btn-info btn-block btn-sm" data-toggle="modal" data-target="#exampleModalForFirstButton" tabindex="1">تعديل اسم المُستخدم</button>
+
+    <br>
+
+    <button type="button" class="btn btn-secondary btn-block btn-sm" data-toggle="modal" data-target="#exampleModalForSecondButton" tabindex="1">تعديل كلمة المُرور</button>
+</div>
+
+<nav>
+    <a class="logo" href="/Stage/Index" tabindex="1" title="الذهابُ لصفحةِ السنواتِ الدراسيّة">
+        <img src="~/images/letterM.png">
+    </a>
+</nav>
+
+<!--=================================================================================================================================-->
+<!--This is for the first button popup-->
+<div class="modal fade" id="exampleModalForFirstButton" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelForFirst" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelForFirst">تعديل اسم المُستخدم الخاص بالحسابِ</h5>
+            </div>
+
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+                        <input placeholder="Old username" value="@Model" type="text" class="form-control" id="old-user-name-editing" title="اسمُ المُستخدم السابق" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <input placeholder="New username" type="text" class="form-control" id="new-user-name-editing" title="اسمُ المُستخدم الجديد">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal" id="cancelModel">غلقُ الأيقونة</button>
+                <button type="button" id="saveFirstButton" class="btn btn-primary">حفظُ التعديلات على اسم المُستخدم</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<!--=================================================================================================================================-->
+<!--This is for the second button popup-->
+<div class="modal fade" id="exampleModalForSecondButton" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelForSecond" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabelForSecond">تعديل كلمة المرور الخاص بالحسابِ</h5>
+            </div>
+
+            <div class="modal-body">
+                <form>
+
+                    <div class="form-group">
+                        <input placeholder="Old password" type="password" class="form-control" id="old-password-editing" title="كلمة المُرور القديمة">
+                    </div>
+
+                    <div class="form-group">
+                        <input placeholder="New password" type="password" class="form-control" id="new-password-editing" title="كلمة المُرور الجديدة">
+                    </div>
+
+                    <div class="form-group">
+                        <input placeholder="Confirm password" type="password" class="form-control" id="confirm-password-editing" title="كلمة المُرور الجديدة">
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" id="closingSecondButton" class="btn btn-danger" data-dismiss="modal">غلقُ الأيقونة</button>
+                <button type="button" id="saveSecondButton" class="btn btn-primary">حفظُ التعديلات على كلمة المُرور</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+<!-- This is all CSS files for this page -->
+<link rel="stylesheet" href="~/css/sumOfAllFiles.css" />
+<link rel="stylesheet" href="~/css/toastr.min.css" />
+<link rel="stylesheet" href="~/css/styleHello.css" />
+
+<!-- This is all JAVASCRIPT files for this page -->
+<script src="~/js/toastr.min.js"></script>
+<script src="~/js/custom-hello.js "></script>

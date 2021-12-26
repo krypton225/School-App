@@ -1,0 +1,140 @@
+input[type="text"]::placeholder {
+    text-align: left;
+}
+
+/*=============================================== Start Navbar ===============================================*/
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(36, 36, 36, 0.9);
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+nav .logo img {
+    height: 29px;
+    width: 29px;
+    margin: 22px auto;
+    display: block;
+    text-align: center;
+}
+
+.fas {
+    font-size: 27px;
+    color: rgb(179, 179, 179);
+}
+
+.fas:hover {
+    color: rgb(240, 240, 240);
+}
+
+.fa-sign-out-alt,
+.fa-user-cog {
+    position: fixed;
+    top: 3%;
+    font-size: 20px;
+    color: rgb(65, 95, 160);
+    cursor: pointer;
+}
+
+.fa-sign-out-alt {
+    left: 2%;
+}
+
+.fa-user-cog {
+    left: 7%;
+    background-color: transparent;
+    border: none;
+}
+
+.fa-sign-out-alt:hover,
+.fa-user-cog:hover {
+    color: rgb(116, 133, 170);
+}
+
+
+/*=============================================== End Navbar ===============================================*/
+
+.left {
+    left: 0;
+    background: #131218da;
+}
+
+.right {
+    right: 0;
+    background: #131218da;
+    padding: 0;
+}
+
+.centered {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.img-fluid {
+    border-radius: 50%;
+}
+
+
+/*======================================================================================================================================*/
+
+
+/*Loading page*/
+
+#loader-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#modalLabelOfNewPassword {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*=============================================== Start Container ===============================================*/
+
+.container {
+    height: 180px;
+    width: 320px;
+    background-color: rgba(32, 32, 32, 0.9);
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 20px;
+    animation: moveToLeft 2s;
+}
+
+.container h2 {
+    margin-top: 30px;
+    padding: 4px;
+}
+
+.modal-header .modal-title {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group .col-form-label {
+    text-align: end;
+}
+
+.modal-footer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*=================================================================================================================================*/

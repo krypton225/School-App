@@ -1,0 +1,166 @@
+﻿@model school.dtos.AbsentCelander
+@{
+    ViewData["Title"] = "صفحة الطباعة";
+}
+
+<!--This style for deleting the navbar in this page ONLY-->
+<style>
+    .logo {
+        display: none;
+        visibility: hidden;
+    }
+
+    #changeData {
+        display: none;
+        visibility: hidden;
+    }
+
+    #outing {
+        display: none;
+        visibility: hidden;
+    }
+</style>
+
+<div id="cont">
+    <div class="myH2">
+
+        <div class="leftDiv">
+            <h2 class="left-1" id="stageTable" style="font-size: 22px;">
+            <script>
+            </script> : المرحلةُ الدراسيّة</h2>
+            <h2 class="left-2" id="classTable" style="font-size: 22px;">
+                <script>
+                     localStorage.getItem("className");
+                </script>
+                : الفصلُ الدراسيّ
+            </h2>
+        </div>
+
+        <div class="rightDiv">
+            <h2 class="right-h2" id="schoolTable" style="font-size: 22px;"> : اسمُ المدرسة</h2>
+            <h2 class="right-h2" style="font-size: 22px;"> @Model.month : سردٌ لغياب شهر</h2>
+        </div>
+
+        <div class="clear"></div>
+
+        <hr>
+
+        <h2 class="centerized" style="font-size:20px;"> : كشفُ أسماء لغياب طُلاب فصل</h2>
+
+    </div>
+
+    <table style="width: 100%; margin-left:auto; margin-right:auto;" border="1">
+
+        <thead style="background-color: #dfe4ea;">
+            <tr>
+
+                @for (int i = 1; i <= Model.NumOfDay; i++)
+                {
+                    if (Model.endDate.DayOfWeek == DayOfWeek.Saturday)
+                    {
+                        <th scope="col" class="th-edit">س</th>
+                    }
+                    if (Model.endDate.DayOfWeek == DayOfWeek.Sunday)
+                    {
+                        <th scope="col" class="th-edit">ح</th>
+                    }
+                    if (Model.endDate.DayOfWeek == DayOfWeek.Monday)
+                    {
+                        <th scope="col" class="th-edit">ن</th>
+                    }
+                    if (Model.endDate.DayOfWeek == DayOfWeek.Tuesday)
+                    {
+                        <th scope="col" class="th-edit">ث</th>
+                    }
+                    if (Model.endDate.DayOfWeek == DayOfWeek.Wednesday)
+                    {
+                        <th scope="col" class="th-edit">ع</th>
+                    }
+                    if (Model.endDate.DayOfWeek == DayOfWeek.Thursday)
+                    {
+                        <th scope="col" class="th-edit">خ</th>
+                    }
+                    if (Model.endDate.DayOfWeek == DayOfWeek.Friday)
+                    {
+                        <th scope="col" class="th-edit">ج</th>
+
+                    }
+
+                    Model.endDate = Model.endDate.AddDays(-1);
+
+                }
+                <th scope="col" class="th-edit" style="font-size: 12px; width: 7.8%; font-weight: bolder;" tabindex="1" title="ترتيبُ الجدول">اسمُ الطالب</th>
+            </tr>
+
+        </thead>
+        <tbody style="text-align: center;">
+            @for (int i = 0; i < Model.Students.Length; i++)
+            {
+                <tr>
+
+                    @for (int j = Model.NumOfDay - 1; j >= 0; j--)
+                    {
+                        if (Model.absentMat[i, j] != null)
+                        {
+                            if (Model.absentMat[i, j].Value)
+                            {
+                                <td scope="col"><i class="fa fa-times"></i></td>
+                            }
+                            if (!Model.absentMat[i, j].Value)
+                            {
+                                <td scope="col"><i class="fas fa-check"></i></td>
+                            }
+                        }
+                        else
+                        {
+                            <td scope="col">_</td>
+                        }
+                    }
+
+                    <td scope="col" style="font-size: 12px; width: 7.8%; text-align: center;">@Model.Students[i]</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br>
+
+</div>
+
+<div>
+    <input value="اطبع" id="buttonPrinting" class="btn btn-danger" onClick="window.print();" type="button" tabindex="1"
+           style="margin-left:1%; width:140px; background-color:#0984e3; color:#FFFFFF; cursor:pointer; font-size:16px;
+                    border: solid 2px #0984e3; border-radius:10px;" />
+</div>
+
+<!-- This is all CSS files for this page -->
+<link rel="stylesheet" href="~/css/sumOfAllFiles.css" />
+<link rel="stylesheet" href="~/css/showAbsentsThePage.css" />
+
+<!-- This is all JAVASCRIPT files for this page -->
+<script>
+    /*========================================================================*/
+    //This is for sorting the data in the table alphabetically.
+    $(document).ready(function () {
+        var getCellValue = function (tr, idx) { return tr.children[idx].innerText || tr.children[idx].textContent; }
+
+        var comparer = function (idx, asc) {
+            return function (a, b) {
+                return function (v1, v2) {
+                    return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v1 - v2 : v1.toString().localeCompare(v2);
+                }(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
+            }
+        };
+
+        // do the work...
+        Array.prototype.slice.call(document.querySelectorAll('th')).forEach(function (th) {
+            th.addEventListener('keypress', function () {
+                var table = th.parentNode
+                while (table.tagName.toUpperCase() != 'TABLE') table = table.parentNode;
+                Array.prototype.slice.call(table.querySelectorAll('tr:nth-child(n+2)'))
+                    .sort(comparer(Array.prototype.slice.call(th.parentNode.children).indexOf(th), this.asc = !this.asc))
+                    .forEach(function (tr) { table.appendChild(tr) });
+            })
+        });
+    });
+</script>

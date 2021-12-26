@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- This is the title of the tab in the browser -->
+    <title>@ViewData["Title"]</title>
+
+    <!-- This is the fonts which will needed in the app , and this is shared for all files -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap">
+
+    <!-- This is the icon in the tab of the browser -->
+    <link rel="icon" href="~/images/letterM.png">
+
+    <!-- This is all CSS FRAMEWORK files for this page -->
+    <link rel="stylesheet" href="~/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/bootstrap-toggle.min.css" />
+    <link rel="stylesheet" href="~/css/jqeury-confirm.css" />
+    <link rel="stylesheet" href="~/js/alertifyjs/css/alertify.min.css" />
+
+    <!-- This is all CSS files which is create for this page -->
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/sumOfAllFiles.css" />
+
+    <!--This is file for jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- This is file for the Microsoft explorer browser -->
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    @if (User.Identity.IsAuthenticated)
+    {
+        @if (ViewData["isNotAllow"] == null)
+        {
+            <!-- This is the nav bar of app -->
+            <nav>
+                <a class="logo" id="logo" tabindex="2">
+                    <img src="~/images/letterM.png">
+                </a>
+            </nav>
+
+            @*data-toggle="modal" data-target="#exampleModalForSetting"*@
+
+            <!-- This is the icon of the (Logout) of the app -->
+            <a class="fas fa-sign-out-alt fa-rotate-180" title="تسجيلُ الخُروج" tabindex="4" asp-action="Logout" asp-controller="Account" id="outing"></a>
+
+            <!-- This is the icon for changing the data of the account -->
+            <a id="changeData" class="fas fa-user-cog" asp-action="AccountInfo" asp-controller="Account" tabindex="3" title="تغيير  البيانات"></a>
+
+            <!--=================================================================================================================================-->
+            <!--This is for modal of the setting icon-->
+
+            <div class="modal fade" id="exampleModalForSetting" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                <div class="modal-dialog" role="document">
+
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabelOfNewPassword">تعديلُ كلمة المُرور</h5>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="oldPassword" placeholder="كلمةُ المُرور القديمة"><br>
+                                <input type="password" class="form-control" id="newPassword" placeholder="كلمةُ المُرور الجديدة">
+                            </div>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">غلقُ الأيقونة</button>
+                            <button type="button" class="btn btn-primary">تعديلُ الآن</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+        @RenderBody()
+
+    }
+
+    else
+    {
+        @RenderBody()
+
+    }
+
+    <!-- This is all JAVASCRIPT FRAMEWORK files for this page -->
+    <script src="~/js/jquery-3.4.1.min.js "></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/bootstrap-toggle.min.js"></script>
+    <script src="~/js/jquery-confirm.js"></script>
+    <script src="~/js/alertifyjs/alertify.min.js"></script>
+
+    <!-- This is all JAVASCRIPT files for this page which is created -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+
+    <!--<script>
+        document.getElementById("logo").tabIndex = -1;
+    </script>-->
+</body>
+</html>
